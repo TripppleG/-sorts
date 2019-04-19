@@ -9,22 +9,22 @@ void Swap(int &a, int &b)
 
 void Heapify(int* arr, int n, int i)
 {
-	int smallest = i;
+	int largest = i;
 	int l = i * 2 + 1;
 	int r = i * 2 + 2;
 
-	if (l < n && arr[l] < arr[smallest])
+	if (l < n && arr[l] > arr[largest])
 	{
-		smallest = l;
+		largest = l;
 	}
-	if (r < n && arr[r] < arr[smallest])
+	if (r < n && arr[r] < arr[largest])
 	{
-		smallest = r;
+		largest = r;
 	}
-	if (smallest != i)
+	if (largest != i)
 	{
-		Swap(arr[i], arr[smallest]);
-		Heapify(arr, n, smallest);
+		Swap(arr[i], arr[largest]);
+		Heapify(arr, n, largest);
 	}
 }
 
