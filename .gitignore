@@ -11,3 +11,6 @@ InsertionSort/.vs/InsertionSort/v16/.suo
 QuickSort/.vs/QuickSort/v16/.suo
 *.db
 *.ipch
+*.exe
+*.ilk
+*.pdb
