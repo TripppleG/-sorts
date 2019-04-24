@@ -7,31 +7,32 @@ void swap(int& a, int& b)
 	b = temp;
 }
 
-int Partition(int arr[], int low, int high)
+int Partition(int arr[], int start, int end)
 {
-	int pivot = arr[high];    // pivot 
-	int i = (low - 1);  // Index of smaller element 
+	int pivotValue = arr[end];
+	int pivotIndex = start;
 
-	for (int j = low; j < high; j++)
+	for (int i = start; i < end; i++)
 	{
-		if (arr[j] <= pivot)
+		if (arr[i] <= pivotValue)
 		{
-			i++;
-			swap(arr[i], arr[j]);
+			swap(arr[pivotIndex], arr[i]);
+			pivotIndex++;
 		}
 	}
-	swap(arr[i + 1], arr[high]);
-	return (i + 1);
+	swap(arr[pivotIndex], arr[end]);
+	return pivotIndex;
 }
 
-void QuickSort(int arr[], int low, int high)
+void QuickSort(int arr[], int start, int end)
 {
-	if (low < high)
+	if (start >= end)
 	{
-		int pi = Partition(arr, low, high);
-		QuickSort(arr, low, pi - 1);
-		QuickSort(arr, pi + 1, high);
+		return;
 	}
+	int index = Partition(arr, start, end);
+	QuickSort(arr, start, index - 1);
+	QuickSort(arr, index + 1, end);
 }
 
 int main()
