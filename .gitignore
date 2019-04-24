@@ -18,3 +18,11 @@ QuickSort/.vs/QuickSort/v16/.suo
 *.log
 *.obj
 *.idb
+*.exe
+*.ilk
+*.pdb
+*.tlog
+*.idb
+*.lastbuildstate
+*.idb
+*.pdb
