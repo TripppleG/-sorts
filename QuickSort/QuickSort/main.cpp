@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 void swap(int& a, int& b)
 {
@@ -7,7 +8,7 @@ void swap(int& a, int& b)
 	b = temp;
 }
 
-int Partition(int arr[], int start, int end)
+int Partition(std::vector<int>& arr, int start, int end)
 {
 	int pivotValue = arr[end];
 	int pivotIndex = start;
@@ -24,7 +25,7 @@ int Partition(int arr[], int start, int end)
 	return pivotIndex;
 }
 
-void QuickSort(int arr[], int start, int end)
+void QuickSort(std::vector<int>& arr, int start, int end)
 {
 	if (start >= end)
 	{
@@ -37,9 +38,9 @@ void QuickSort(int arr[], int start, int end)
 
 int main()
 {
-	int arr[10] = { 1, 10, -3, 5, 0, -7, 15, 18, 9, -4 };
-	QuickSort(arr, 0, 9);
-	for (int i = 0; i < 10; i++)
+	std::vector<int> arr = { 1, 10, -3, 5, 0, -7, 15, 18, 9, -4 };
+	QuickSort(arr, 0, arr.size() - 1);
+	for (int i = 0; i < arr.size(); i++)
 	{
 		std::cout << arr[i] << " ";
 	}

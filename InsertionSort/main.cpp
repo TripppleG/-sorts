@@ -1,6 +1,6 @@
 #include <iostream>
-
-void InsertionSort(int* arr, int len)
+#include <vector>
+void InsertionSort(std::vector<int>& arr, int len)
 {
 	for (int i = 1; i < len; i++)
 	{
@@ -18,6 +18,11 @@ void InsertionSort(int* arr, int len)
 
 int main()
 {
-	int arr[10] = { 14, 36, 435, 6, 43, 1, 53, -45, 0, 65 };
-	InsertionSort(arr, 10);
+	std::vector<int> arr = { 14, 36, 435, 6, 43, 1, 53, -45, 0, 65 };
+	InsertionSort(arr, arr.size());
+	for (int i = 0; i < arr.size(); i++)
+	{
+		std::cout << arr[i] << " ";
+	}
+	return 0;
 }
